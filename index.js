@@ -616,11 +616,16 @@ app.get('/posts', (request, response) => {
 });
 
 app.post('/posts', (request, response) => {
-    console.log(request.body);
-    response.json(
+    posts.push(
         {
             ...request.body,
             id: posts.length + 1
+        }
+    );
+    response.json(
+        {
+            ...request.body,
+            id: posts.length
         }
     );
 })
