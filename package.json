@@ -1,0 +1,23 @@
+{
+  "name": "fsd59wdbe",
+  "version": "1.0.0",
+  "description": "This is a backend application that provides a RESTful API examples.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/githubscientist/fsd59wdbe.git"
+  },
+  "author": "Sathish Gnanaprakasam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/githubscientist/fsd59wdbe/issues"
+  },
+  "homepage": "https://github.com/githubscientist/fsd59wdbe#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
