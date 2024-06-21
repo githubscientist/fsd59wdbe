@@ -645,6 +645,23 @@ app.put('/posts/:id', (request, response) => {
     response.json(updatedPost);
 })
 
+app.delete('/posts/:id', (request, response) => {
+
+    // find the post to delete
+    const postToDelete = posts.find(post => post.id == request.params.id);
+
+    if (!postToDelete) {
+        response.send({
+            message: 'Post not found'
+        })
+    }
+
+    posts = posts.filter(post => post.id != request.params.id);
+    response.json({
+        message: 'Post deleted successfully'
+    });
+})
+
 // 3. run the server
 app.listen(3001, () => {
     console.log(`Server is running on http://localhost:3001`);
