@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
 const app = require('./app');
+const { MONGODB_URI } = require('./utils/config');
 
 console.log(`Connecting to MongoDB...`);
 
-mongoose.connect(`mongodb+srv://guvi:Guvi2023@atlascluster.nzeb00e.mongodb.net/`)
+mongoose.connect(MONGODB_URI)
     .then(() => {
         console.log('Connected to MongoDB');
 
