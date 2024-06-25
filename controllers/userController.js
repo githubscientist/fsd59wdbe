@@ -9,6 +9,25 @@ const userController = {
         } catch (error) {
             response.status(500).send({ message: error.message });
         }
+    },
+    register: async (request, response) => {
+        try {
+            // get the user inputs from the request body
+            const { name, email, password } = request.body;
+
+            // create a new user
+            const newUser = new User({ name, email, password });
+
+            // save the user
+            const savedUser = await newUser.save();
+
+            response.status(201).send({
+                message: 'User created successfully',
+                user: savedUser
+            });
+        } catch (error) {
+            response.status(500).send({ message: error.message });
+        }
     }
 }
 
