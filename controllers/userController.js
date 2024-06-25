@@ -15,6 +15,14 @@ const userController = {
             // get the user inputs from the request body
             const { name, email, password } = request.body;
 
+            // check if the user already exists in the database with same email
+            const user = await User.findOne({ email });
+
+            // if the user exists, return an error response
+            if (user) {
+                return response.status(400).send({ message: 'User already exists' });
+            }
+
             // create a new user
             const newUser = new User({ name, email, password });
 
