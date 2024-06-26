@@ -71,6 +71,33 @@ const userController = {
         } catch (error) {
             response.status(500).send({ message: error.message });
         }
+    },
+
+    login: async (request, response) => {
+        try {
+            // get the user email and password from the request body
+            const { email, password } = request.body;
+
+            // check if the user exists in the database
+            const user = await User.findOne({ email });
+
+            // if the user does not exist, return an error response
+            if (!user) {
+                return response.status(404).send({ message: 'User not found' });
+            }
+
+            // if the user exists, compare the password
+            const isPasswordValid = await bcrypt.compare(password, user.password);
+
+            // if the password is invalid, return an error response
+            if(!isPasswordValid) {
+                return response.status(400).send({ message: 'Invalid password' });
+            }
+
+            response.status(200).send({ message: 'Login successful' });
+        } catch (error) {
+            response.status(500).send({ message: error.message });
+        }
     }
 }
 
