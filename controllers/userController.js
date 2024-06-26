@@ -1,5 +1,7 @@
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const { SECRET_KEY } = require('../utils/config');
 
 // define the contoller for the user
 const userController = {
@@ -94,7 +96,18 @@ const userController = {
                 return response.status(400).send({ message: 'Invalid password' });
             }
 
-            response.status(200).send({ message: 'Login successful' });
+            // generate a JWT token
+            const token = jwt.sign({ id: user._id }, SECRET_KEY);
+
+            // set a cookie with the token
+            response.cookie('token', token, {
+                httpOnly: true,
+                secure: true,
+                sameSite: 'none',
+                expires: new Date(Date.now() + 24 * 3600000) // 24 hours from login
+            });
+
+            response.status(200).json({ message: 'Login successful' });
         } catch (error) {
             response.status(500).send({ message: error.message });
         }
