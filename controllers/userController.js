@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const bcrypt = require('bcrypt');
 
 // define the contoller for the user
 const userController = {
@@ -37,8 +38,11 @@ const userController = {
                 return response.status(400).send({ message: 'User already exists' });
             }
 
+            // hash the password
+            const hashedPassword = await bcrypt.hash(password, 10);
+
             // create a new user
-            const newUser = new User({ name, email, password });
+            const newUser = new User({ name, email, password: hashedPassword });
 
             // save the user
             const savedUser = await newUser.save();

@@ -67,7 +67,7 @@ Job Portal System
 
 ## Features
 
-- [ ] User registration
+- [x] User registration
 - [ ] User login
 
 - [ ] Admin Dashboard
@@ -82,8 +82,8 @@ Job Portal System
   - [ ] Delete a Job
   - [ ] View all Jobs
   - [ ] View a Job
-  - [ ] View all users
-  - [ ] View a user
+  - [x] View all users
+  - [x] View a user - by query & url params
   - [ ] Update a user
   - [ ] Delete a user
   - [ ] View all applications
@@ -101,10 +101,10 @@ Job Portal System
 
 ## API Endpoints
 
-- [ ] POST /api/v1/users/register : Register a user
+- [x] POST /api/v1/users/register : Register a user
 - [ ] POST /api/v1/users/login : Login a user
-- [ ] GET /api/v1/users : Get all users
-- [ ] GET /api/v1/users/:id : Get a user
+- [x] GET /api/v1/users : Get all users
+- [x] GET /api/v1/users/:id : Get a user
 - [ ] PUT /api/v1/users/:id : Update a user
 - [ ] DELETE /api/v1/users/:id : Delete a user
 - [ ] GET /api/v1/users/profile : Get user profile
