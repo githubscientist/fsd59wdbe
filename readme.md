@@ -72,10 +72,10 @@ Job Portal System
 
 - [ ] Admin Dashboard
 
-  - [ ] Add a Company
+  - [x] Add a Company
   - [ ] Update a Company
   - [ ] Delete a Company
-  - [ ] View all Companies
+  - [x] View all Companies
   - [ ] View a Company
   - [ ] Add a Job
   - [ ] Update a Job
@@ -84,8 +84,8 @@ Job Portal System
   - [ ] View a Job
   - [x] View all users
   - [x] View a user - by query & url params
-  - [ ] Update a user
-  - [ ] Delete a user
+  - [x] Update a user
+  - [x] Delete a user
   - [ ] View all applications
 
 - [ ] User Dashboard
