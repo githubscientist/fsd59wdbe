@@ -9,7 +9,7 @@ userRouter.post('/login', userController.login);
 
 // protected routes
 // define the route for getting all users
-userRouter.get('/', auth.verifyToken, userController.getAllUsers);
+userRouter.get('/', auth.verifyToken, auth.isAdmin, userController.getAllUsers);
 userRouter.get('/logout', auth.verifyToken, userController.logout);
 
 userRouter.get('/profile', auth.verifyToken, userController.getProfile);

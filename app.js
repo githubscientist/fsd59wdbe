@@ -35,6 +35,6 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 app.use('/users', userRouter);
-app.use('/', companyRouter);
+app.use('/companies', companyRouter);
 
 module.exports = app;

@@ -4,7 +4,7 @@ const companyController = {
     addCompany: async (request, response) => {
         try {
             // get the user id from the request parameters
-            const userId = request.params.userId;
+            const userId = request.userId;
 
             // get the company details from the request body
             const { name, location } = request.body;
