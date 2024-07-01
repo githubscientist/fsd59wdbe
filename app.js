@@ -7,14 +7,29 @@ const morgan = require('morgan');
 
 const app = express();
 
+// parse the cookies of the request
+app.use(cookieParser());
+
 // enable CORS
-app.use(cors());
+app.use(cors(
+    {
+        origin: 'http://localhost:5173',
+        credentials: true
+    }
+));
+
+// app.use(express.urlencoded({ extended: true }));
+
+// app.use((request, response, next) => {
+//     response.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+//     response.header('Access-Control-Allow-Credentials', true);
+//     response.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+//     response.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+//     next();
+// });
 
 // log requests
 app.use(morgan('dev'));
-
-// parse the cookies of the request
-app.use(cookieParser());
 
 // to parse the body of the request
 app.use(express.json());

@@ -173,6 +173,52 @@ const userController = {
         } catch (error) {
             response.status(500).send({ message: error.message });
         }
+    },
+    getProfile: async (request, response) => {
+        try {
+            // get the user id from the request object
+            const userId = request.userId;
+
+            // find the user by id from the database
+            const user = await User.findById(userId).select('-password -__v -_id');
+
+            // if the user does not exist, return an error response
+            if (!user) {
+                return response.status(404).send({ message: 'User not found' });
+            }
+
+            response.status(200).json({ message: 'User profile', user });
+        } catch (error) {
+            response.status(500).send({ message: error.message });
+        }
+    },
+    updateProfile: async (request, response) => {
+        try {
+            // get the user id from the request object
+            const userId = request.userId;
+
+            // get the details to update from the request body
+            const { name, email } = request.body;
+
+            // find the user by id from the database
+            const user = await User.findById(userId);
+
+            // if the user does not exist, return an error response
+            if (!user) {
+                return response.status(404).send({ message: 'User not found' });
+            }
+
+            // update the user details if they are provided and if the user exists
+            if (name) user.name = name;
+            if (email) user.email = email;
+
+            // save the updated user details to the database
+            const updatedUser = await user.save();
+
+            response.status(200).json({ message: 'User updated successfully', user: updatedUser });
+        } catch (error) {
+            response.status(500).send({ message: error.message });
+        }
     }
 }
 

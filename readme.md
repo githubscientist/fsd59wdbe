@@ -107,9 +107,9 @@ Job Portal System
 - [x] GET /api/v1/users/:id : Get a user
 - [x] PUT /api/v1/users/:id : Update a user
 - [x] DELETE /api/v1/users/:id : Delete a user
-- [ ] GET /api/v1/users/profile : Get user profile
-- [ ] PUT /api/v1/users/profile : Update user profile
-- [ ] DELETE /api/v1/users/profile : Delete user profile
+- [x] GET /api/v1/users/profile : Get user profile
+- [x] PUT /api/v1/users/profile : Update user profile
+- [x] DELETE /api/v1/users/profile : Delete user profile
 - [ ] GET /api/v1/companies : Get all companies
 - [ ] GET /api/v1/companies/:id : Get a company
 - [ ] POST /api/v1/companies : Add a company
