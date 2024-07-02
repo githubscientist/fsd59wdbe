@@ -219,6 +219,28 @@ const userController = {
         } catch (error) {
             response.status(500).send({ message: error.message });
         }
+    },
+    // set the profile picture
+    setProfilePicture: async (req, res) => {
+        try {
+            if (!req.file) {
+                return res.status(400).json({ error: 'No file uploaded' });
+            }
+
+            const userId = req.userId;
+            const profilePicture = req.file.path;
+
+            const user = await User.findByIdAndUpdate(userId, { profilePicture }, { new: true });
+
+            if (!user) {
+                return res.status(404).json({ error: 'User not found' });
+            }
+
+            res.status(200).json({ user });
+        } catch (error) {
+            console.error('Error updating profile picture:', error);
+            res.status(500).json({ error: 'Failed to update profile picture' });
+        }
     }
 }
 
