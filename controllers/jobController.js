@@ -141,7 +141,7 @@ const jobController = {
     getApplications: async (req, res) => {
         try {
             // get all jobs where the applicants array is not empty
-            const jobs = await Job.find({ applicants: { $exists: true, $not: { $size: 0 } } }).populate('company').exec();
+            const jobs = await Job.find({ applicants: { $exists: true, $not: { $size: 0 } } }).populate('company').populate('applicants').lean().exec();
 
             // send the jobs in the response
             res.status(200).json(jobs);
