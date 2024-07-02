@@ -73,30 +73,30 @@ Job Portal System
 - [ ] Admin Dashboard
 
   - [x] Add a Company
-  - [ ] Update a Company
-  - [ ] Delete a Company
+  - [x] Update a Company
+  - [x] Delete a Company
   - [x] View all Companies
-  - [ ] View a Company
-  - [ ] Add a Job
-  - [ ] Update a Job
-  - [ ] Delete a Job
-  - [ ] View all Jobs
-  - [ ] View a Job
+  - [x] View a Company
+  - [x] Add a Job
+  - [x] Update a Job
+  - [x] Delete a Job
+  - [x] View all Jobs
+  - [x] View a Job
   - [x] View all users
   - [x] View a user - by query & url params
   - [x] Update a user
   - [x] Delete a user
-  - [ ] View all applications
+  - [] View all applications
 
 - [ ] User Dashboard
-  - [ ] View all jobs
-  - [ ] View a job
-  - [ ] Apply for a job
-  - [ ] View all applied jobs
+  - [x] View all jobs
+  - [x] View a job
+  - [x] Apply for a job
+  - [x] View all applied jobs
   - [ ] View a applied job
-  - [ ] View profile
-  - [ ] Update profile
-  - [ ] Delete profile
+  - [x] View profile
+  - [x] Update profile
+  - [x] Delete profile
   - [x] logout
 
 ## API Endpoints
@@ -110,17 +110,14 @@ Job Portal System
 - [x] GET /api/v1/users/profile : Get user profile
 - [x] PUT /api/v1/users/profile : Update user profile
 - [x] DELETE /api/v1/users/profile : Delete user profile
-- [ ] GET /api/v1/companies : Get all companies
-- [ ] GET /api/v1/companies/:id : Get a company
-- [ ] POST /api/v1/companies : Add a company
-- [ ] PUT /api/v1/companies/:id : Update a company
-- [ ] DELETE /api/v1/companies/:id : Delete a company
-- [ ] GET /api/v1/jobs : Get all jobs
-- [ ] GET /api/v1/jobs/:id : Get a job
-- [ ] POST /api/v1/jobs : Add a job
-- [ ] PUT /api/v1/jobs/:id : Update a job
-- [ ] DELETE /api/v1/jobs/:id : Delete a job
-- [ ] GET /api/v1/applications : Get all applications
-- [ ] GET /api/v1/applications/:id : Get an application
-- [ ] POST /api/v1/applications : Add an application
-- [ ] GET /api/users/logout : Logout a user
+- [x] GET /api/v1/companies : Get all companies
+- [x] GET /api/v1/companies/:id : Get a company
+- [x] POST /api/v1/companies : Add a company
+- [x] PUT /api/v1/companies/:id : Update a company
+- [x] DELETE /api/v1/companies/:id : Delete a company
+- [x] GET /api/v1/jobs : Get all jobs
+- [x] GET /api/v1/jobs/:id : Get a job
+- [x] POST /api/v1/jobs : Add a job
+- [x] PUT /api/v1/jobs/:id : Update a job
+- [x] DELETE /api/v1/jobs/:id : Delete a job
+- [x] GET /api/users/logout : Logout a user

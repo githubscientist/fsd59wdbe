@@ -1,6 +1,7 @@
 const express = require('express');
 const userRouter = require('./routes/userRoutes');
 const companyRouter = require('./routes/companyRoutes');
+const jobRouter = require('./routes/jobRoutes');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 const morgan = require('morgan');
@@ -36,5 +37,6 @@ app.use(express.json());
 
 app.use('/users', userRouter);
 app.use('/companies', companyRouter);
+app.use('/jobs', jobRouter);
 
 module.exports = app;
